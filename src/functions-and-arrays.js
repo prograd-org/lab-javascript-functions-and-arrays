@@ -1,20 +1,19 @@
-// Iteration #1: Find the maximum
+// Progression #1: Greatest of the two numbers
 
-// Iteration #2: Find longest word
+// Progression #2: The lengthy word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-// Iteration #3: Calculate the sum
-
+// Progression #3: Net Price
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-// Iteration #4: Calculate the average
-// Level 1: Array of numbers
+// Progression #4: Calculate the average
+// Progression 4.1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-// Level 2: Array of strings
+// Progression 4.2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-// Iteration #5: Unique arrays
+// Progression #5: Unique arrays
 const wordsUnique = [
   'bread',
   'jam',
@@ -30,10 +29,10 @@ const wordsUnique = [
   'flour'
 ];
 
-// Iteration #6: Find elements
+// Progression #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-// Iteration #7: Count repetition
+// Progression #7: Count repetition
 const wordsCount = [
   'machine',
   'matter',
@@ -48,7 +47,7 @@ const wordsCount = [
   'matter'
 ];
 
-// Iteration #8: Bonus
+// Progression #8: Bonus
 
 const matrix = [
   [08, 02, 22, 97, 38, 15, 00, 40, 00, 75],
