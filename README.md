@@ -6,7 +6,7 @@
 
 Manipulating arrays is a very common operation we perform while programming. Whether you're calculating the total order value for a shopping cart, grabbing only the first names out of a list, or moving a piece on a chessboard, you're going to be modifying or manipulating an array to get the result.
 
-In a similar fashion, you are gonna perform a few array & function related operations in this lab. Go to the src/functionandarray.js file and complete all the unfinished code to complete this challenge.
+In a similar fashion, you are gonna perform a few array & function related operations in this lab. Go to the ## src/functions-and-arrays.js file and complete all the unfinished code to complete this challenge.
 
 
 ## What should you do
