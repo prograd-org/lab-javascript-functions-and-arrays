@@ -35,7 +35,7 @@ Open the `SpecRunner.html` file on your browser and start coding to pass the tes
 
 Define a function `greatestOfTwoNumber` that takes two numbers as arguments and returns the greatest number.
 
-## Progression #2: The lengthy one
+## Progression #2: The lengthy word
 
 Declare a function named `findScaryWord` that takes as argument an array of names and returns the name which contains the maximum characters. If there are 2 names with the same number of characters, it should return the first occurence with max characters.
 
@@ -45,7 +45,7 @@ You can use the following array to test your solution:
 const words = ['George', 'Alice', 'Alex', 'John', 'Infanta', 'Xavior', 'LourdhAntony'];
 ```
 
-## Iteration #3: Net Price
+## Progression #3: Net Price
 
 Calculating a sum can be as simple as iterating over an array and adding each of the elements.
 
@@ -59,7 +59,7 @@ You can use the following array to test your solution:
 const prices = [200, 120, 100, 108, 135, 162, 25, 170, 80, 110];
 ```
 
-### Bonus - Progression #3.1: A generic `sum()` function
+### Progression #3.1 (Bonus): A generic `sum()` function
 
 **The goal: Learn how to refactor your code.** :
 
@@ -119,7 +119,7 @@ const items = [
 ];
 ```
 
-### Bonus - Iteration #4.3: A generic `avg()` function
+### Progression #4.3 (Bonus): A generic `avg()` function
 
 Create function `avg(arr)` that receives any mixed array and calculates average. Consider as mixed array an array filled with numbers and/or strings and/or booleans. We're following a similar logic to the one applied on the bonus iteration 4.1 :wink:
 
@@ -230,7 +230,7 @@ const matrix = [
 ];
 ```
 
-### Progression #8.1: Product of diagonals
+### Progression #8.1 (Bonus): Product of diagonals
 
 Following the logic you've used in iteration #8, declare a function called `maximumProductOfDiagonals(matrix)`. It takes a matrix as a parameter and returns the greatest product of any four values layed out diagonally, in either direction.
 
