@@ -14,21 +14,21 @@ function shuffle(currentArray) {
 
 describe('Find the greatest number', () => {
   it('should create a function named greatestOfTwoNumbers', () => {
-    expect(typeof maxOfTwoNumbers).toBe('function');
+    expect(typeof greatestOfTwoNumbers).toBe('function');
   });
 
   it('should return greater of two arguments - if the first argument greater', () => {
-    expect(greaterOfTwoNumbers(2, 1)).toBe(2);
-    expect(greaterOfTwoNumbers(5, -7)).toBe(5);
+    expect(greatestOfTwoNumbers(2, 1)).toBe(2);
+    expect(greatestOfTwoNumbers(5, -7)).toBe(5);
   });
 
   it('should return greater of two arguments - if the second argument greater', () => {
-    expect(greaterOfTwoNumbers(1, 3)).toBe(3);
-    expect(greaterOfTwoNumbers(-5, 3)).toBe(3);
+    expect(greatestOfTwoNumbers(1, 3)).toBe(3);
+    expect(greatestOfTwoNumbers(-5, 3)).toBe(3);
   });
 
   it('should return either arguments - if both arguments are equal', () => {
-    expect(greaterOfTwoNumbers(4, 4)).toBe(4);
+    expect(greatestOfTwoNumbers(4, 4)).toBe(4);
   });
 });
 
