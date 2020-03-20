@@ -9,21 +9,72 @@ function greatestOfTwoNumber(num1, num2) {
   else {
     return (num1 || num2);
   }
-    
+
 }
 // Progression #2: The lengthy word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
-function findScaryword(words) {
-  for (i = 0; i < (words.length -1); i++){
-    for (j = 1; j < words.length; j++){
-      if (words[i].length > words[j].length
-        )
+function findScaryWord(words) {
+  if (words.length === 0) {
+    return null;
+  }
+  if (words.length === 1) {
+    return words[0];
+  }
+  for (i = 0; i < (words.length - 1); i++) {
+    for (j = 1; j < words.length; j++) {
+      if (words[i].length > words[j].length) {
+        return word[i];
+      }
+      else if (words[j] > words[j + 1]) {
+        return words[j];
+        j++;
+      }
+      else if (words[j] > words[j + 1]) {
+        return words[j];
+        j++;
+      }
+      else if (words[j] > words[j + 1]) {
+        return words[j];
+        j++;
+      }
+      else if (words[j] > words[j + 1]) {
+        return words[j];
+        j++;
+      }
+      else {
+        return words[j];
+      }
     }
   }
 }
 // Progression #3: Net Price
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+function netPrice(spend) {
+  if (spend.length === 0) {
+    return 0;
+  }
+  sum = 0
+  for (let i = 0; i < spend.length; i++) {
+    sum += spend[i];
+  }
+  return sum;
+}
+netPrice(numbers);
 
+const mixedArr = [63, 122, 'audi', 61, true, 'volvo', '20', 'lamborghini', 38, 156];
+
+function add(array) {
+  all_sum = 0;
+  for (i = 0; i < array.length; i++) {
+    do {
+      all_sum += array[i];
+    }
+    while (typeof (array[i] === "Number"));
+  }
+  return all_sum;
+}
+
+add(mixedArr);
 // Progression #4: Calculate the average
 // Progression 4.1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
