@@ -1,8 +1,26 @@
 // Progression #1: Greatest of the two numbers
-
+function greatestOfTwoNumber(num1, num2) {
+  if (num1 > num2) {
+    return num1;
+  }
+  else if (num2 > num1) {
+    return num2;
+  }
+  else {
+    return (num1 || num2);
+  }
+    
+}
 // Progression #2: The lengthy word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
-
+function findScaryword(words) {
+  for (i = 0; i < (words.length -1); i++){
+    for (j = 1; j < words.length; j++){
+      if (words[i].length > words[j].length
+        )
+    }
+  }
+}
 // Progression #3: Net Price
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
