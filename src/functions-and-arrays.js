@@ -66,10 +66,7 @@ const mixedArr = [63, 122, 'audi', 61, true, 'volvo', '20', 'lamborghini', 38, 1
 function add(array) {
   all_sum = 0;
   for (i = 0; i < array.length; i++) {
-    do {
-      all_sum += array[i];
-    }
-    while (typeof (array[i] === "Number"));
+    all_sum += array[i];
   }
   return all_sum;
 }
@@ -78,10 +75,27 @@ add(mixedArr);
 // Progression #4: Calculate the average
 // Progression 4.1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+function midPointOfLevels(array) {
+  if (array.length === 0) {
+    return null;
+  }
+  return (netPrice(array) / array.length);
+}
+midPointOfLevels(numbersAvg);
 
 // Progression 4.2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
-
+function averageWordLength(array) {
+  ln_words = 0;
+  if (array.length === 0) {
+    return null;
+  }
+  for (i = 0; i < array.length; i++) {
+    ln_words += array[i].length;
+  }
+  return (ln_words / array.length);
+}
+averageWordLength(wordsArr);
 // Progression #5: Unique arrays
 const wordsUnique = [
   'bread',
