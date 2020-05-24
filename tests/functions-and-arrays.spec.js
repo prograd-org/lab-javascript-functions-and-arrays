@@ -12,7 +12,7 @@ function shuffle(currentArray) {
   return array;
 }
 
-describe('Find the greatest numbers', () => {
+describe('Find the greatest number', () => {
   it('should create a function named greatestOfTwoNumbers', () => {
     expect(typeof greatestOfTwoNumbers).toBe('function');
   });
