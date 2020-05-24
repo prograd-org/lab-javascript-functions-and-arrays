@@ -33,7 +33,7 @@ Open the `SpecRunner.html` file on your browser and start coding to pass the tes
 
 ## Progression #1: Greatest of the two
 
-Define a function `greatestOfTwoNumber` that takes two numbers as arguments and returns the greatest number.
+Define a function `greatestOfTwoNumbers` that takes two numbers as arguments and returns the greatest number.
 
 ## Progression #2: The lengthy word
 
