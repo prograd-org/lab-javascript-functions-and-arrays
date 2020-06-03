@@ -39,8 +39,7 @@ function add(numbers){
   for(i=0 ; i < numbers.length ; i++){
     switch(typeof(numbers[i])){
       case `object`:
-        console.error(`Invalid data type`);
-        break;
+        throw new Error(`Unsupported data type sir or ma'am`);
       case `number`:
         sum = sum + numbers[i];
         break;
