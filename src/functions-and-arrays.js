@@ -124,7 +124,7 @@ function uniqueArray(words){
   }
   return words;//returning unique element array
 }
-console.log(uniqueArray(wordsUnique));
+//debugging console.log(uniqueArray(wordsUnique));
 // Progression #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 function searchElement(words , word){
@@ -190,11 +190,11 @@ function maximumProduct( matrix ){
     for( j=0 ; j< cols ; j++ ){//iterating through matrix
       if((j+3)<cols){//if element have 4 adjacent along x-axis, find product
         product1 = matrix[i][j] * matrix[i][j+1] * matrix[i][j+2] * matrix[i][j+3]  ;
-        console.log(`${matrix[i][j]}*${matrix[i][j+1]}*${matrix[i][j+2]}*${matrix[i][j+3]} = ${product1}\n`);
+       //debugging console.log(`${matrix[i][j]}*${matrix[i][j+1]}*${matrix[i][j+2]}*${matrix[i][j+3]} = ${product1}\n`);
       }
       if((i+3)<rows){//if element has 4 adjacent along y-axis ,find product
         product2 = matrix[i][j] * matrix[i+1][j] * matrix[i+2][j] * matrix[i+3][j]  ;
-        console.log(`${matrix[i][j]}*${matrix[i+1][j]}*${matrix[i+2][j]}*${matrix[i+3][j]} = ${product2}\n`);
+      //debugging  console.log(`${matrix[i][j]}*${matrix[i+1][j]}*${matrix[i+2][j]}*${matrix[i+3][j]} = ${product2}\n`);
       }
       //set maximum to max of product1,product2 and itself
       if(product1>product2){
@@ -207,8 +207,41 @@ function maximumProduct( matrix ){
           maximum = product2;
         }
       }
-      console.log(maximum);
+     //debugging console.log(maximum);
     }
   }
-  return maximum;//finall returning maximum
+  return maximum;//finally returning maximum
+}
+
+//### Progression #8.1 (Bonus): Product of diagonals
+function maximumProductOfDiagonals(matrix){
+  let maximum = Number.MIN_VALUE; //setting maximum to lowest possible value
+  let i, j, product1, product2;
+  let rows = matrix.length,
+      cols = matrix[0].length;
+  for( i=0 ; i<rows ; i++ ){
+    for( j=0 ; j< cols ; j++ ){//iterating through matrix
+      if((j+3)<cols && (i+3)<rows){//if element have 4 adjacent values along positive diagonal, find product
+        product1 = matrix[i][j] * matrix[i][j+1] * matrix[i][j+2] * matrix[i][j+3]  ;
+       //debugging console.log(`${matrix[i][j]}*${matrix[i][j+1]}*${matrix[i][j+2]}*${matrix[i][j+3]} = ${product1}\n`);
+      }
+      if((i-3) > -1 && (j-3) > -1){//if element has 4 adjacent values along negative diagonal ,find product
+        product2 = matrix[i][j] * matrix[i+1][j] * matrix[i+2][j] * matrix[i+3][j]  ;
+      //debugging  console.log(`${matrix[i][j]}*${matrix[i+1][j]}*${matrix[i+2][j]}*${matrix[i+3][j]} = ${product2}\n`);
+      }
+      //set maximum to max of product1,product2 and itself
+      if(product1>product2){
+        if(product1 > maximum){
+          maximum = product1;
+        }
+      }
+      else{
+        if(product2 > maximum){
+          maximum = product2;
+        }
+      }
+      // debugging console.log(maximum);
+    }
+  }
+  return maximum;//finally returning maximum
 }
