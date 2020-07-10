@@ -37,15 +37,18 @@ function add(arr) {
   if (arr.length == 0) return 0;
   else {
     for (var i = 0; i < arr.length; i++) {
-      if (typeof arr[i] == "number") {
+      if (typeof arr[i] === "number") {
         sum += arr[i];
-      } else if (typeof arr[i] == "string") {
+      } else if (typeof arr[i] === "string") {
         var l = arr[i].length;
         sum += l;
-      } else if (typeof arr[i] == "boolean") {
+      } else if (typeof arr[i] === "boolean") {
         var l = arr[i] / 1;
         sum += l;
-      } else throw Error;
+      } //else throw Error;
+      if (typeof arr[i] === "array" || typeof arr[i] === "object") {
+        throw Error("Unsupported data type sir or ma'am");
+      }
     }
   }
   return sum;
@@ -85,7 +88,10 @@ function averageWordLength(wordsArr) {
     for (var i = 0; i < wordsArr.length; i++) {
       sum += wordsArr[i].length;
     }
-    return sum / wordsArr.length;
+    var result = (sum / wordsArr.length) * 100;
+    result = parseInt(result);
+    var average = result / 100;
+    return average;
   }
 }
 
@@ -105,7 +111,9 @@ function avg(mixedArr) {
         sum += l;
       } else throw Error;
     }
-    var average = parseInt(sum / mixedArr.length);
+    var res = (sum / mixedArr.length) * 100;
+    res = parseInt(res);
+    var average = res / 100;
     return average;
   }
 }
