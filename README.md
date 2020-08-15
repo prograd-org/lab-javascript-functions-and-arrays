@@ -10,6 +10,7 @@ In a similar fashion, you are gonna perform a few array & function related opera
 You can see the output in browser console
 
 ## What should you do
+
 ```
 Fork this repo
 Clone this repo
@@ -17,6 +18,7 @@ Practice JavaScript - Arrays
 ```
 
 ## How To Submit
+
 ```
 Upon completion, run the following commands:
 
@@ -42,7 +44,15 @@ Declare a function named `findScaryWord` that takes as argument an array of name
 You can use the following array to test your solution:
 
 ```javascript
-const words = ['George', 'Alice', 'Alex', 'John', 'Infanta', 'Xavior', 'LourdhAntony'];
+const words = [
+  "George",
+  "Alice",
+  "Alex",
+  "John",
+  "Infanta",
+  "Xavior",
+  "LourdhAntony",
+];
 ```
 
 ## Progression #3: Net Price
@@ -51,7 +61,7 @@ Calculating a sum can be as simple as iterating over an array and adding each of
 
 John spent his money on buying groceries, he wants to find the net amount that he had spent in the super market.
 
-Declare a function named `netPrice` that takes an array of prices as an argument, and returns the sum of all items in the array. Later in the course we'll learn how to do this by using the `reduce` array method, which will make your work significantly easier. For now, let's practice _"declarative"_ way  - adding values, using loops.
+Declare a function named `netPrice` that takes an array of prices as an argument, and returns the sum of all items in the array. Later in the course we'll learn how to do this by using the `reduce` array method, which will make your work significantly easier. For now, let's practice _"declarative"_ way - adding values, using loops.
 
 You can use the following array to test your solution:
 
@@ -72,7 +82,18 @@ Let's create a new function `add()` that calculates the sum for array filled wit
 You can use the following array to test your solution:
 
 ```javascript
-const mixedArr = [63, 122, 'audi', 61, true, 'volvo', '20', 'lamborghini', 38, 156];
+const mixedArr = [
+  63,
+  122,
+  "audi",
+  61,
+  true,
+  "volvo",
+  "20",
+  "lamborghini",
+  38,
+  156,
+];
 
 // should return: 463
 ```
@@ -106,16 +127,16 @@ Declare a function named `averageWordLength` that receives as a single argument 
 
 ```javascript
 const items = [
-  'bread',
-  'jam',
-  'milk',
-  'egg',
-  'flour',
-  'oil',
-  'rice',
-  'coffee powder',
-  'sugar',
-  'salt'
+  "bread",
+  "jam",
+  "milk",
+  "egg",
+  "flour",
+  "oil",
+  "rice",
+  "coffee powder",
+  "sugar",
+  "salt",
 ];
 ```
 
@@ -124,7 +145,18 @@ const items = [
 Create function `avg(arr)` that receives any mixed array and calculates average. Consider as mixed array an array filled with numbers and/or strings and/or booleans. We're following a similar logic to the one applied on the bonus iteration 4.1 :wink:
 
 ```javascript
-const mixedArr = [63, 122, 'audi', 61, true, 'volvo', '20', 'lamborghini', 38, 156];
+const mixedArr = [
+  63,
+  122,
+  "audi",
+  61,
+  true,
+  "volvo",
+  "20",
+  "lamborghini",
+  38,
+  156,
+];
 
 // should return: 46.3
 ```
@@ -139,18 +171,18 @@ Do this in the form of a function `uniqueArray` that receives an array of words 
 
 ```javascript
 const items = [
-  'bread',
-  'jam',
-  'milk',
-  'egg',
-  'flour',
-  'oil',
-  'rice',
-  'coffee powder',
-  'sugar',
-  'salt',
-  'egg',
-  'flour'
+  "bread",
+  "jam",
+  "milk",
+  "egg",
+  "flour",
+  "oil",
+  "rice",
+  "coffee powder",
+  "sugar",
+  "salt",
+  "egg",
+  "flour",
 ];
 ```
 
@@ -164,14 +196,14 @@ Declare a function named `searchElement` that will take in an array of words as 
 
 ```javascript
 const words = [
-  'door',
-  'window',
-  'ceiling',
-  'roof',
-  'plinth',
-  'tiles',
-  'ceiling',
-  'flooring'
+  "door",
+  "window",
+  "ceiling",
+  "roof",
+  "plinth",
+  "tiles",
+  "ceiling",
+  "flooring",
 ];
 ```
 
@@ -183,17 +215,17 @@ Declare a function named `howManyTimesElementRepeated` that will take in an arra
 
 ```javascript
 const words = [
-  'machine',
-  'matter',
-  'subset',
-  'trouble',
-  'starting',
-  'matter',
-  'eating',
-  'matter',
-  'truth',
-  'disobedience',
-  'matter'
+  "machine",
+  "matter",
+  "subset",
+  "trouble",
+  "starting",
+  "matter",
+  "eating",
+  "matter",
+  "truth",
+  "disobedience",
+  "matter",
 ];
 ```
 
@@ -226,13 +258,12 @@ const matrix = [
   [32, 98, 81, 28, 64, 23, 67, 10, 26, 38],
   [67, 26, 20, 68, 02, 62, 12, 20, 95, 63],
   [24, 55, 58, 05, 66, 73, 99, 26, 97, 17],
-  [21, 36, 23, 09, 75, 00, 76, 44, 20, 45]
+  [21, 36, 23, 09, 75, 00, 76, 44, 20, 45],
 ];
 ```
 
 ### Progression #8.1 (Bonus): Product of diagonals
 
 Following the logic you've used in iteration #8, declare a function called `maximumProductOfDiagonals(matrix)`. It takes a matrix as a parameter and returns the greatest product of any four values layed out diagonally, in either direction.
-
 
 Happy Coding ProGrad ❤️
