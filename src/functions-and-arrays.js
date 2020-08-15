@@ -54,30 +54,30 @@ function midPointOfLevels(array) {
 }
 
 //Progression 3.1: 
-
-function add(array) {
-  let sum = 0;
-  if (array.length === 0) {
+function add(mixedArr) {
+  var sum = 0;
+  if (mixedArr.length == 0)
     return 0;
-  } else if (array.length === 1) {
-    return sum += array[0];
-  } else {
-    array.forEach(element => {
-      if (typeof element === 'string') {
-        sum += element.length;
-      } else if (typeof element === 'boolean') {
-        if (element === true) {
-          sum += 1;
-        } else {
-          sum += 0;
-        }
-      } else {
-        sum += element;
-      }
-    });
+  else {
+    for (var i = 0; i < mixedArr.length; i++) {
+      if (typeof (mixedArr[i]) == "number") {
+        sum += mixedArr[i];
+      } else if (typeof (mixedArr[i]) == "string") {
+        var l = mixedArr[i].length;
+        sum += l;
+      } else if (typeof (mixedArr[i]) == "boolean") {
+        var l = mixedArr[i] / 1;
+        sum += l;
+      } else
+        throw "Unsupported data type sir or ma'am";
+
+    }
   }
   return sum;
 }
+
+// Did you follow the naming convention as given in the progression??
+//yes sir absolutely
 // Progression 4.2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
@@ -95,27 +95,28 @@ function averageWordLength(array) {
 
 // Progression 4.3: average of mixed array
 
-function avg(arr) {
-  let sum = 0;
-  let average;
-  if (arr.length === 0) {
+function avg(mixedArr) {
+  if (mixedArr.length == 0)
     return null;
-  } else {
-    arr.forEach(element => {
-      if (typeof element === 'string') {
-        sum += element.length;
-      } else if (typeof element === 'boolean') {
-        if (element === true) {
-          sum += 1;
-        } else {
-          sum += 0;
-        }
-      } else {
-        sum += element;
-      }
-    });
-    average = sum / arr.length;
-    return average.toFixed(2);
+  else {
+    var sum = 0;
+
+    for (var i = 0; i < mixedArr.length; i++) {
+      if (typeof (mixedArr[i]) == "number") {
+        sum += mixedArr[i];
+      } else if (typeof (mixedArr[i]) == "string") {
+        var l = mixedArr[i].length;
+        sum += l;
+      } else if (typeof (mixedArr[i]) == "boolean") {
+        var l = mixedArr[i] / 1;
+        sum += l;
+      } else
+        throw "Unsupported data type sir or ma'am";
+    }
+    var average = (sum / (mixedArr.length)).toFixed(2);
+    console.log(average);
+    return average;
+
   }
 }
 
