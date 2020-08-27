@@ -199,3 +199,33 @@ function maximumProduct(matrix) {
   }
   return result;
 }
+
+function maximumProductOfDiagonals(matrix) {
+  let result = 0;
+
+  for (let i = 0; i <= matrix.length - 4; i++) {
+    let product =
+      matrix[i][i] *
+      matrix[i + 1][i + 1] *
+      matrix[i + 2][i + 2] *
+      matrix[i + 3][i + 3];
+
+    if (product > result) {
+      result = product;
+    }
+  }
+
+  for (let i = 0; i <= matrix.length - 4; i++) {
+    let product = 1;
+    count = 0;
+    while (count < 4) {
+      product *= matrix[i + count][[matrix[0].length - 1] - (i + count)];
+      count++;
+    }
+    if (product > result) {
+      result = product;
+    }
+  }
+
+  return result;
+}
