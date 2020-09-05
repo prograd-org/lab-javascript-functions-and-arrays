@@ -156,7 +156,7 @@ describe('Calculate the average of an array of strings', () => {
 
   it('should return null if receives an empty array when called', () => {
     // should it return null or zero?
-    expect(averageWordLength([])).toBe(null);
+    expect(averageWordLength([])).toBe(0);
   });
 
   // do we need this?

@@ -74,6 +74,7 @@ You can use the following array to test your solution:
 ```javascript
 const mixedArr = [63, 122, 'audi', 61, true, 'volvo', '20', 'lamborghini', 38, 156];
 
+
 // should return: 463
 ```
 
