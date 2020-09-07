@@ -80,44 +80,46 @@ function add(array) {
       if (x == true) {
         sum = sum + 1;
       }
-      if (typeof x == "array" || typeof x == "objects") {
-        throw "error";
-      }
+    }
+    if (typeof x == "array" || typeof x == "object") {
+      throw "Error: Unsupported data type sir or ma'am";
     }
   });
+
   return sum;
 }
 console.log(add(mixedArr));
 
 // Progression #4: Calculate the average
-const y = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+const levels = [22, 16, 9, 10, 7, 14, 11, 9];
 
 function midPointOfLevels(x) {
+  var sum = 0;
   if (x.length == 0) {
     return null;
   }
   x.forEach(function (num) {
-    var sum = 0;
     sum = sum + num;
   });
   var average = sum / x.length;
   return average;
 }
-console.log(midPointOfLevels(y));
+console.log(midPointOfLevels(levels));
 
 // Progression 4.1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageWordLength(x) {
+  var sum = 0;
+  var average = 0;
   if (x.length == 0) {
     return null;
   }
   x.forEach(function (num) {
-    var sum = 0;
     sum = sum + num;
+    average = (average + sum) / x.length;
+    return average;
   });
-  var average = sum / x.length;
-  return average;
 }
 console.log(averageWordLength(numbersAvg));
 
@@ -139,9 +141,12 @@ function avg(arr) {
   if (arr.length == 0) {
     return null;
   }
+  var sum = 0;
   arr.forEach(function (xx) {
-    var sum = 0;
-    sum = sum + xx;
+    if (typeof xx == "string") {
+      var s = xx.length;
+      sum = sum + s;
+    }
   });
   var average = sum / arr.length;
   return average;
@@ -182,7 +187,7 @@ function avg(ary) {
       }
     }
   });
-  average = sum / x.length;
+  average = sum / ary.length;
   return average;
 }
 console.log(avg(mixedAr));
