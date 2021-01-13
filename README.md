@@ -9,24 +9,6 @@ Manipulating arrays is a very common operation we perform while programming. Whe
 In a similar fashion, you are gonna perform a few array & function related operations in this lab. Go to the src/functions-and-arrays.js file and complete all the unfinished code to complete this challenge.
 You can see the output in browser console
 
-## What should you do
-```
-Fork this repo
-Clone this repo
-Practice JavaScript - Arrays
-```
-
-## How To Submit
-```
-Upon completion, run the following commands:
-
-git add .
-git commit -m "ProGrad ID"
-git push origin master
-
-And finally, create a pull request so your ProGrad Mentor (PM) can review your work.
-```
-
 ## Tests
 
 Open the `SpecRunner.html` file on your browser and start coding to pass the test. Remember to focus on one test at a time and read carefully the instructions to understand what should be done.
