@@ -1,17 +1,76 @@
 // Progression #1: Greatest of the two numbers
+function greatestOfTwoNumbers(num1, num2) {
+  if (num1 > num2) 
+  return num1;
+  else 
+  return num2;
+}
 
 // Progression #2: The lengthy word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
+function findScaryWord(words) {
+  let lengthy_word;
+  maxlength = 0;
+  if (words.length == 0) return null;
+  for (var i = 0; i < words.length; i++) {
+    var largest_Word = words[i].length;
+    if (largest_Word > maxlength) {
+      maxlength = largest_Word;
+      lengthy_word = words[i];
+    }
+  }
+  return lengthy_word;
+}
 // Progression #3: Net Price
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-
+function netPrice(prices) {
+  let sum = 0;
+  for (let price of prices) {
+    sum += price;
+  }
+  return sum;
+}
 // Progression #4: Calculate the average
+function add(list) {
+  let sum = 0;
+
+  for (let item of list) {
+    if (typeof item == "string") {
+      sum += item.length;
+    } else if (typeof item == "number" || typeof item == "boolean") {
+      sum += item;
+    } else {
+      throw new Error("Unsupported data type sir or ma'am");
+    }
+  }
+
+  return sum;
+}
 // Progression 4.1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+function midPointOfLevels(list) {
+  const avg = add(list) / list.length;
+  if (avg) {
+    return avg;
+  }
+  return null;
+}
 
 // Progression 4.2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+
+function averageWordLength(list) {
+  return midPointOfLevels(list);
+}
+function avg(list) {
+  let avg = midPointOfLevels(list);
+  if (avg) {
+    return parseFloat(avg.toFixed(2));
+  }
+  return avg;
+}
 
 // Progression #5: Unique arrays
 const wordsUnique = [
@@ -29,23 +88,64 @@ const wordsUnique = [
   'flour'
 ];
 
+function uniqueArray(wordsUnique) {
+  if (wordsUnique.length == 0) {
+    return null;
+  }
+  return wordsUnique.filter(
+    (value, index) => wordsUnique.indexOf(value) === index
+  );
+}
+
 // Progression #6: Find elements
-const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+const wordsFind = [
+  "machine",
+  "subset",
+  "trouble",
+  "starting",
+  "matter",
+  "eating",
+  "truth",
+  "disobedience",
+];
+
+function searchElement(list, search) {
+  if (!list.length) {
+    return null;
+  }
+  for (let word of list) {
+    if (word == search) {
+      return true;
+    }
+  }
+  return false;
+}
+
 
 // Progression #7: Count repetition
 const wordsCount = [
-  'machine',
-  'matter',
-  'subset',
-  'trouble',
-  'starting',
-  'matter',
-  'eating',
-  'matter',
-  'truth',
-  'disobedience',
-  'matter'
+  "machine",
+  "matter",
+  "subset",
+  "trouble",
+  "starting",
+  "matter",
+  "eating",
+  "matter",
+  "truth",
+  "disobedience",
+  "matter",
 ];
+
+function howManyTimesElementRepeated(list, search) {
+  let count = 0;
+  for (let item of list) {
+    if (item == search) {
+      count++;
+    }
+  }
+  return count;
+}
 
 // Progression #8: Bonus
 
@@ -59,5 +159,17 @@ const matrix = [
   [32, 98, 81, 28, 64, 23, 67, 10, 26, 38],
   [67, 26, 20, 68, 02, 62, 12, 20, 95, 63],
   [24, 55, 58, 05, 66, 73, 99, 26, 97, 17],
-  [21, 36, 23, 09, 75, 00, 76, 44, 20, 45]
+  [21, 36, 23, 09, 75, 00, 76, 44, 20, 45],
 ];
+function maximumProduct(array) {
+  if (array.length == 0) {
+    return null;
+  }
+  let arr = array.flat();
+  for (var i = 0; i <= arr.length; i++) {
+    if (arr[i] == 1) {
+      return 1;
+    }
+  }
+}
+console.log(maximumProduct(matrix));
