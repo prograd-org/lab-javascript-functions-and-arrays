@@ -113,18 +113,21 @@ function searchElement(wordsFind){
 
 // Progression #7: Count repetition
 const wordsCount = ['machine','matter','subset','trouble','starting','matter','eating','matter','truth','disobedience','matter'];
-let wordsSearch = wordsCount.includes('matter');
-function howManyTimesElementRepeated(wordsCount,wordSearch){
+var wordsSearch;
+function howManyTimesElementRepeated(wordsCount,wordsSearch){
   if(wordsCount.length==0)
-    return null;
+    return 0;
   else{ 
+    if(wordsCount.includes(wordsSearch)){
       let count=0;
-      for(i=0;i<wordsCount.length;i++) {
-        if(wordsCount[i]==wordSearch){
-          count ++
+      for(let i=0;i<wordsCount.length;i++){
+        if(wordsCount[i]==wordsSearch){
+          count = (count || 0) + 1;
         }
-      }  
-  } return count;
+      }
+      return count;
+    }
+  }
 }
 
 // Progression #8: Bonus
