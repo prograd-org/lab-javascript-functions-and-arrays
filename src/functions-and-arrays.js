@@ -1,6 +1,8 @@
+
+
 // Progression #1: Greatest of the two numbers
 
-function max_townums_range(x, y){	
+function greatestOfTwoNumbers(x, y){	
   if (x==y){
     return "Both are same";
   }
@@ -10,27 +12,33 @@ function max_townums_range(x, y){
     return y;
     
 }
-console.log("Progression 1 : "+ max_townums_range(45, 60));
+console.log("Progression 1 : "+ greatestOfTwoNumbers(45, 60));
 console.log(" ");
+
+
 
 
 // Progression #2: The lengthy word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-console.log("Progression 2 : "+ findLongestWord(words));
+console.log("Progression 2 : "+ findScaryWord(words));
 console.log(" ");
 
-function findLongestWord(arr) {
+function findScaryWord(arr) {
   return arr.reduce((matrix, b) => matrix.length < b.length ? b : matrix, " ");
 }
 
+
+
+
+
 // Progression #3: Net Price
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
-console.log("Progression 3 : "+ netprice(numbers));
+console.log("Progression 3 : "+ netPrice(numbers));
 console.log(" ");
 
 
-function netprice(numbers){
+function netPrice(numbers){
 
   let net_price=0;
   for(let i=0;i<numbers.length;i++){
@@ -39,13 +47,17 @@ function netprice(numbers){
   return net_price;
  }
 
+
+
+
+
 // Progression #4: Calculate the average
 // Progression 4.1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
-console.log("Progression 4.1 : "+ avgnum(numbersAvg));
+console.log("Progression 4.1 : "+ midPointOfLevels(numbersAvg));
 console.log(" ");
 
-function avgnum(numbers){
+function midPointOfLevels(numbers){
 
   let total=0;
   len=numbers.length;
@@ -56,12 +68,15 @@ function avgnum(numbers){
   return total/len;
  }
 
+
+
+
 // Progression 4.2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
-console.log("Progression 4.2 : "+ avgstr(wordsArr));
+console.log("Progression 4.2 : "+ averageWordLength(wordsArr));
 console.log(" ");
 
-function avgstr(arr){
+function averageWordLength(arr){
 
   var totallen = 0;
   for(var i = 0; i < arr.length; i++){
@@ -70,26 +85,34 @@ function avgstr(arr){
   return totallen/arr.length;
  }
 
+
+
+
 // Progression #5: Unique arrays
 const wordsUnique = [' bread ' , ' jam ' , ' milk ' , ' egg ' , ' flour ' , ' oil ' , ' rice' , ' coffee powder ' , ' sugar ' , ' salt ' , ' egg ' , ' flour '];
-const unique = (value, index, self) => {
+const uniqueArray = (value, index, self) => {
   return self.indexOf(value) === index;
 }
-const uniques =wordsUnique.filter(unique)
+const uniques =wordsUnique.filter(uniqueArray)
 console.log("Progression 5 : "+ uniques)
 console.log(" ");
+
+
+
 
 // Progression #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function searchStringInArray (str, strArray) {
+function searchElement (str, strArray) {
   for (var j=0; j<strArray.length; j++) {
       if (strArray[j].match(str)) return true;
   }
   return false;
 }
-console.log("Progression 6: "+ searchStringInArray('eating',wordsFind));
+console.log("Progression 6: "+ searchElement('eating',wordsFind));
 console.log(" ");
+
+
 
 
 
@@ -98,13 +121,16 @@ const wordsCount = ['machine','matter','subset','trouble','starting','matter','e
 
 const wordToCheck = "matter";
 
-countOccurrences=wordsCount.reduce((count,wordsCountcurr) => {
+howManyTimesElementRepeated=wordsCount.reduce((count,wordsCountcurr) => {
     if(wordsCountcurr == wordToCheck)
        count++;
     return count;
 },0);
-console.log("Progression 7: Occurance of word 'matter' : "+ countOccurrences);
+console.log("Progression 7: Occurance of word 'matter' : "+ howManyTimesElementRepeated);
 console.log(" ");
+
+
+
 
 
 // Progression #8: Bonus
