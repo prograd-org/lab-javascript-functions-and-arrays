@@ -1,22 +1,132 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Jasmine Spec Runner v2.8.0</title>
 
-    <link rel="shortcut icon" type="image/png" href="jasmine/jasmine-2.8.0/jasmine_favicon.png" />
-    <link rel="stylesheet" href="jasmine/jasmine-2.8.0/jasmine.css" />
+<head>
+  <meta charset="utf-8" />
+  <title>Jasmine Spec Runner v2.8.0</title>
 
-    <script src="jasmine/jasmine-2.8.0/jasmine.js"></script>
-    <script src="jasmine/jasmine-2.8.0/jasmine-html.js"></script>
-    <script src="jasmine/jasmine-2.8.0/boot.js"></script>
+  <link rel="shortcut icon" type="image/png" href="jasmine/jasmine-2.8.0/jasmine_favicon.png" />
+  <link rel="stylesheet" href="jasmine/jasmine-2.8.0/jasmine.css" />
 
-    <!-- include source files here... -->
-    <script src="src/functions-and-arrays.js"></script>
+  <script src="jasmine/jasmine-2.8.0/jasmine.js"></script>
+  <script src="jasmine/jasmine-2.8.0/jasmine-html.js"></script>
+  <script src="jasmine/jasmine-2.8.0/boot.js"></script>
 
-    <!-- include spec files here... -->
-    <script src="tests/functions-and-arrays.spec.js"></script>
-  </head>
+  <!-- include source files here... -->
+  <script src="src/functions-and-arrays.js"></script>
 
-  <body></body>
+  <!-- include spec files here... -->
+  <script src="tests/functions-and-arrays.spec.js"></script>
+</head>
+
+<body></body>
+<script>
+
+  // Progression #1: Greatest of the two
+  const greatestOfTwoNumbers = (a, b) => {
+    return a > b ? a : b;
+  }
+
+  // Progression #2: The lengthy word
+  const findScaryWord = (arr) => {
+    if (arr.length === 0) {
+      return null;
+    }
+    let flag = 0;
+    arr.forEach((element, index) => {
+      if (element.length > arr[flag].length) {
+        flag = index;
+      }
+    });
+    return arr[flag];
+  }
+
+  // Progression #3: Net Price
+  const netPrice = (arr) => {
+    let sum = 0;
+    arr.forEach((element) => {
+      sum += element;
+    });
+    return sum;
+  }
+
+  // Progression #3.1 (Bonus): A generic sum() function
+  const add = (arr) => {
+    let sum = 0;
+    let flag = 0;
+    arr.forEach((element) => {
+      if (typeof element === 'number') {
+        sum += element;
+      } else if (typeof element === 'string') {
+        sum += element.length
+      } else if (typeof element === 'boolean') {
+        sum += element ? 1 : 0;
+      } else {
+        return flag = 1;
+      }
+    });
+    if (flag === 1) {
+      throw new Error("Unsupported data type sir or ma'am")
+    }
+    return sum;
+  }
+
+  // Progresson #4: Mid point
+  // Progression 4.1: Array of numbers
+  const midPointOfLevels = (arr) => {
+    if (arr.length === 0) return null;
+    const sum = add(arr)
+    return sum / arr.length
+  }
+
+  // Progression 4.2: Array of strings
+  const averageWordLength = (arr) => {
+    if (arr.length === 0) return null;
+    const sum = add(arr)
+    return sum / arr.length
+  }
+
+  // Progression #4.3 (Bonus): A generic avg() function
+  const avg = (arr) => {
+    if (arr.length === 0) return null;
+    const sum = add(arr)
+    return Number((sum / arr.length).toFixed(2))
+  }
+
+  // Progression #5: Unique arrays
+  const uniqueArray = (arr) => {
+    if (arr.length === 0) return null;
+    return arr.filter((element, index) => arr.indexOf(element) === index)
+  }
+
+  // Progression #6: Find elements
+  const searchElement = (arr, word) => {
+    if (arr.length === 0) return null;
+    return arr.indexOf(word) !== -1
+  }
+
+  // Progression #7: Count repeated elements
+  const howManyTimesElementRepeated = (arr, word) => {
+    return arr.filter((element) => element === word).length
+  }
+
+  // Progression #8 (Bonus): Product of adjacent numbers
+  const maximumProduct = (matrix) => {
+    max = 0;
+    matrix.forEach((row, i) => {
+      row.forEach((element, j) => {
+        if (i < matrix.length - 3) {
+          product = matrix[i][j] * matrix[i + 1][j] * matrix[i + 2][j] * matrix[i + 3][j]
+          max = product > max ? product : max
+        }
+        if (j < matrix[0].length - 3) {
+          product = matrix[i][j] * matrix[i][j + 1] * matrix[i][j + 2] * matrix[i][j + 3]
+          max = product > max ? product : max
+        }
+      })
+    });
+    return max
+  }
+</script>
+
 </html>
