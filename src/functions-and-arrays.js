@@ -1,17 +1,127 @@
 // Progression #1: Greatest of the two numbers
 
+function greatestOfTwoNumbers(num1,num2)
+{
+ if(num1>num2)
+ {
+   return num1;
+ }
+ else if(num2>num1)
+ {
+   return num2;
+ }
+ else{
+   return num1;
+ }
+}
+
+
+
+
 // Progression #2: The lengthy word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
+function findScaryWord(words){
+  if(words.length==0){
+    return null;
+  }  
+  else if(words.length==1){
+    return words[0];
+  }
+  else if(words.length==2){
+    if(words[0].length==words[1].length){
+      return words[0];
+    }
+  }
+  else if(words.length>2){
+    for(i=0;i<words.length;i++){      
+      if(words[0].length<words[i].length){
+        words[0] = words[i];
+      }   
+    }
+    return words[0];
+  }
+}
+
+
+
+
+
+
 // Progression #3: Net Price
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+function netPrice(numbers)
+{
+  var sum=0;
+  for(i=0;i<numbers.length;i++)
+  {
+    sum=sum+numbers[i];
+  }
+  return sum;
+}
+
 
 // Progression #4: Calculate the average
 // Progression 4.1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
+function midPointOfLevels(numbersAvg)
+{
+   var sum=0,avg;
+  if(numbersAvg.length==0)
+  {
+    return null;
+  }
+  else
+  {
+    for(var i=0;i<numbersAvg.length;i++)
+    {
+      sum=sum+numbersAvg[i];
+    }
+    avg=sum/numbersAvg.length;
+    return avg;
+  }
+}
+
+
 // Progression 4.2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+function averageWordLength(wordsArr)
+{
+  var sum=0;
+  if(wordsArr.length==0)
+  {
+    return null;
+  }
+  else{
+    for(var i=0;i<wordsArr.length;i++)
+    {
+      sum=sum+wordsArr[i].length;
+    }
+    return sum/wordsArr.length;
+  }
+}
+
+
+// Progression 4.3 (Bonus): A generic avg() function
+const mixedArr = [63, 122, 'audi', 61, true, 'volvo', '20', 'lamborghini', 38, 156];
+function avg(mixedArr)
+{ sum=0; average=0;
+  if(mixedArr.length==0)
+    return null;
+
+   for(i=0;i<mixedArr.length;i++)
+   {  if(typeof(mixedArr[i])==='number')
+     sum = sum + mixedArr[i];
+     else if(typeof(mixedArr[i])==='string')
+     sum = sum + mixedArr[i].length;
+   }
+   average = (sum/mixedArr.length).toFixed(2);
+   return average;
+}
+
+
+
 
 // Progression #5: Unique arrays
 const wordsUnique = [
@@ -29,8 +139,48 @@ const wordsUnique = [
   'flour'
 ];
 
+function uniqueArray(wordsUnique)
+{
+  if(wordsUnique.length==0)
+  {
+    return null;
+  }
+  else{
+    for(var i=0;i<wordsUnique.length;i++)
+    {
+      for(var j=i+1;j<wordsUnique.length;j++)
+      {
+        if(wordsUnique[i]==wordsUnique[j])
+        {
+          wordsUnique.splice(j,j);
+        }
+      }
+    }
+    return wordsUnique;
+  }
+
+}
+
+
 // Progression #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+function searchElement(wordsFind,word)
+{
+  if(wordsFind.length==0)
+  {
+    return null;
+  }
+  else{
+    for(var i=0;i<wordsFind.length;i++)
+    {
+      if(wordsFind[i]==word)
+      {
+        return true;
+      }
+    }
+  }
+}
+
 
 // Progression #7: Count repetition
 const wordsCount = [
@@ -47,6 +197,25 @@ const wordsCount = [
   'matter'
 ];
 
+function howManyTimesElementRepeated(wordsCount,word)
+{
+  var c=0;
+  if(wordsCount.length==0)
+  {
+    return c;
+  }
+  else{
+    for(var i=0;i<wordsCount.length;i++)
+    {
+      if(wordsCount[i]==word)
+      {
+        c=c+1;
+      }
+    }
+    return c;
+  }
+}
+
 // Progression #8: Bonus
 
 const matrix = [
@@ -61,140 +230,3 @@ const matrix = [
   [24, 55, 58, 05, 66, 73, 99, 26, 97, 17],
   [21, 36, 23, 09, 75, 00, 76, 44, 20, 45]
 ];
-function greatestOfTwoNumbers(){
-  var num1 = parseInt(document.getElementById("n1").value);
-  var num2 = parseInt(document.getElementById("n2").value);
-  if(num1 > num2)
-      document.getElementById("max").innerText = num1;
-  else
-      document.getElementById("max").innerText = num2;
-}
-
-// The lengthy word
-function findScaryWord(){
-  const words = ['George', 'Alice', 'Alex', 'John', 'Infanta', 'Xavior', 'LourdhAntony'];
-  let longest = "";
-  for(let i=0; i<words.length; i++){
-      if(words[i].length > longest.length)
-          longest = words[i];
-  }
-  document.getElementById("lengthy").innerText = longest;
-}
-
-// Net Price
-function netPrice(){
-  const prices = [200, 120, 100, 108, 135, 162, 25, 170, 80, 110];
-  let sum = 0;
-  for(let i=0; i<prices.length; i++)
-      sum += prices[i];
-  document.getElementById("net").innerText = sum;   
-}
-
-// Mid Point
-//4.1
-function midPointOfLevels(){
-  const levels = [22, 16, 9, 10, 7, 14, 11, 9];
-  let sum = 0;
-  for(let i=0; i<levels.length; i++){
-      sum += levels[i];
-  }
-  let average = sum / levels.length;
-  document.getElementById("avg").innerText = average;
-}
-//4.2
-function averageWordLength(){
-  const items = ['bread', 'jam', 'milk', 'egg', 'flour', 'oil', 'rice', 'coffee powder', 'sugar', 'salt'];
-  let sum = 0;
-  for(let i=0; i<items.length; i++){
-      let len = items[i].length;
-      sum += len;
-  }
-  let avg_str = sum / items.length;
-  document.getElementById("avg-str").innerText = avg_str;
-}
-
-// Unique arrays
-function uniqueArray(){
-  const items = ['bread', 'jam', 'milk', 'egg', 'flour', 'oil', 'rice', 'coffee powder', 'sugar', 'salt', 'egg', 'flour'];
-  let unique_arr = [...new Set(items)];
-  document.getElementById("unique").innerText = unique_arr; 
-}
-
-// Find elements
-function searchElement(){
-  const words = ['door','window','ceiling','roof','plinth','tiles','ceiling','flooring'];
-  let str = document.getElementById("str").value;
-  for(let i=0; i<words.length; i++){
-      if(str == words[i]){
-          document.getElementById("found").innerText = "True";
-          break;
-      }
-      else
-          document.getElementById("found").innerText = "False";
-  }
-}
-
-// Count repeated elements
-function howManyTimesElementRepeated(){
-  const words = ['machine', 'matter', 'subset', 'trouble', 'starting', 'matter', 'eating', 'matter', 'truth', 'disobedience', 'matter'];
-  var answer = [];
-  for(let i=0; i<words.length; i++){
-      let f = 0;
-      let current = words[i];
-
-      for(let j=0; j<words.length; j++)
-          if(current == words[j])
-              f++;
-      answer.push(" " + words[i] + " - " + f + " ");
-      document.getElementById("freq").innerText = answer;
-  }
-}
-
-// Product of adjacent numbers
-function maximumProduct(){
-  function findMaxP(arr, n){
-      let max = 0, result;
-      for(let i=0; i<n; i++){
-          for(let j=0; j<n; j++){
-
-              if((j-3) >= 0){
-                  result = arr[i][j] * arr[i][j-1]
-                           * arr[i][j-2] * arr[i][j-3];
-                  if(max < result)
-                      max = result;
-              }
-
-              if((i-3) >= 0){
-                  result = arr[i][j] * arr[i-1][j]
-                           * arr[i-2][j] * arr[i-3][j];
-                  if(max < result)
-                      max = result;
-              }
-
-              if((i-3) >= 0 && (j-3) >= 0){
-                  result = arr[i][j] * arr[i-1][j-1]
-                  * arr[i-2][j-2] * arr[i-3][j-3];
-                  if(max < result)
-                      max = result;
-              }
-
-              if((i-3) >= 0 && (j-1) <= 0){
-                  result = arr[i][j] * arr[i-1][j+1]
-                  * arr[i-2][j+2] * arr[i-3][j+3];
-                  if(max < result)
-                      max = result;
-              }
-          }
-      }
-      return max;
-  }
-
-  let n = 5;
-  let arr =  [[ 1,  2, 3, 4, 5],
-              [ 1, 25, 3, 4, 5],
-              [ 1, 20, 3, 4, 5],
-              [ 1, 20, 3, 4, 5],
-              [ 1,  4, 3, 4, 5]];
-
-  document.getElementById("maxP").innerText = findMaxP(arr, n);
-} 
