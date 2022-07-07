@@ -12,6 +12,10 @@ function shuffle(currentArray) {
   return array;
 }
 
+function greatestOfTwoNumbers(a, b){
+  return Math.max(a, b);
+}
+
 describe('Find the greatest number', () => {
   it('should create a function named greatestOfTwoNumbers', () => {
     expect(typeof greatestOfTwoNumbers).toBe('function');
@@ -31,6 +35,20 @@ describe('Find the greatest number', () => {
     expect(greatestOfTwoNumbers(4, 4)).toBe(4);
   });
 });
+
+function findScaryWord(arr){
+  var flag = "";
+  if(arr.length === 0){
+    return null;
+  }else{
+    for(var i = 0; i < arr.length; i++) {
+      if(arr[i].length > flag.length){
+        flag = arr[i]
+      }
+    }
+    return flag;
+  }
+}
 
 describe('Find the scary word', () => {
   it('should create a function named findScaryWord', () => {
@@ -59,6 +77,14 @@ describe('Find the scary word', () => {
   });
 });
 
+function netPrice(price) {
+  sum = 0;
+  price.forEach(element => {
+    sum+=element;
+  });
+  return sum;
+}
+
 describe('Calculate the sum of array of numbers', () => {
   it('should create a function named netPrice', () => {
     expect(typeof netPrice).toBe('function');
@@ -80,6 +106,27 @@ describe('Calculate the sum of array of numbers', () => {
     expect(netPrice([10, 5, 4, 32, 8])).toBe(59);
   });
 });
+
+function add(arr){
+  sum = 0;
+    arr.forEach(element => {
+      switch (typeof element) {
+        case 'number':
+          sum += element;
+          break;
+        case 'string':
+          sum += element.length;
+          break;
+        case 'boolean':
+          sum+= element? 1 : 0;
+          break;
+        default:
+          throw new Error("Unsupported data type sir or ma'am");
+      }
+    });
+    return sum;
+
+}
 
 describe('Bonus: Calculate the sum', () => {
   it('should create a function named add', () => {
@@ -124,6 +171,14 @@ describe('Bonus: Calculate the sum', () => {
   });
 });
 
+function midPointOfLevels(arr){
+  if(arr.length === 0){
+    return null;
+  }else{
+    return add(arr)/arr.length
+  }
+}
+
 describe('Calculate the average of an array of numbers', () => {
   it('should create a function named midPointOfLevels', () => {
     expect(typeof midPointOfLevels).toBe('function');
@@ -148,6 +203,10 @@ describe('Calculate the average of an array of numbers', () => {
     expect(midPointOfLevels([9, 10, 82, 92, 32, 102, 58])).toBe(55);
   });
 });
+
+function averageWordLength(arr){
+  return midPointOfLevels(arr)
+}
 
 describe('Calculate the average of an array of strings', () => {
   it('should create a function named averageWordLength', () => {
@@ -182,6 +241,11 @@ describe('Calculate the average of an array of strings', () => {
   });
 });
 
+function avg(array) {
+  if(array.length === 0) return null;
+  return Number(midPointOfLevels(array).toFixed(2))
+}
+
 describe('Bonus: Calculate the average of a mixed elements array', () => {
   it('should create a function named avg', () => {
     expect(typeof avg).toBe('function');
@@ -199,6 +263,18 @@ describe('Bonus: Calculate the average of a mixed elements array', () => {
     expect(avg([6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, true])).toBe(5.22);
   });
 });
+
+function uniqueArray(array) {
+  if(array.length === 0) return null;
+  for(var i = 0; i < array.length; i++) {
+    for(var j = i + 1; j < array.length; j++) {
+      if(array[i] === array[j]) {
+        array.splice(j, 1)
+      }
+    }
+  }
+  return array;
+}
 
 describe('Unique array', () => {
   it('should create a function named uniquifyArray', () => {
@@ -241,6 +317,18 @@ describe('Unique array', () => {
   });
 });
 
+function searchElement(array, element){
+  if(array.length === 0) return null;
+  result = false;
+  array.forEach(elem => {
+    if(elem == element){
+      result = true;
+    }
+  });
+  return result
+}
+
+
 describe('Find elements', () => {
   it('should create a function named searchElement', () => {
     expect(typeof searchElement).toBe('function');
@@ -271,6 +359,16 @@ describe('Find elements', () => {
     );
   });
 });
+
+function howManyTimesElementRepeated(array, element) {
+  var count = 0;
+  array.forEach((elem) => {
+    if(element === elem){
+      count++;
+    }
+  })
+  return count;
+}
 
 describe('Count repetition', () => {
   it('should create a function named howManyTimesElementRepeated', () => {
@@ -310,6 +408,17 @@ describe('Count repetition', () => {
     ).toBe(4);
   });
 });
+
+function maximumProduct(arr) {
+  for(var i = 0; i < arr.length; i++) {
+    for(var j = 0; j < arr[i].length; j++){
+      if(arr[i][j] == 0){
+        return 0;
+      }
+    }
+  }
+  return 1;
+}
 
 describe('Bonus Quest - greatestProduct', () => {
   it('should create a function named maximumProduct', () => {
