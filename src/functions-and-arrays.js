@@ -1,50 +1,134 @@
 // Progression #1: Greatest of the two numbers
+function greatestOfTwoNumbers(num1, num2) {
+  if (num1 > num2) {
+    return num1;
+  } else if (num1 < num2) {
+    return num2;
+  } else {
+    return num1;
+  }
+}
+greatestOfTwoNumbers();
 
 // Progression #2: The lengthy word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
+function findScaryWord(words) {
+
+  var lgth = 0;
+  var longest;
+
+  if (words.length > 0) {
+    for (var i = 0; i < words.length; i++) {
+      if (words[i].length > lgth) {
+        lgth = words[i].length;
+        longest = words[i];
+      }
+    }
+    return longest;
+  } else {
+    return null;
+  }
+}
+
 
 // Progression #3: Net Price
-const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+
+function netPrice(prices) {
+
+  var total = 0;
+  for (var i = 0; i < prices.length; i++) {
+
+    total += prices[i];
+  }
+  return total;
+}
 
 // Progression #4: Calculate the average
 // Progression 4.1: Array of numbers
-const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+function midPointOfLevels(levels) {
+  var total = 0;
+  if (levels.length > 0) {
+    for (var i = 0; i < levels.length; i++) {
+
+      total += levels[i];
+    }
+    return total / levels.length;
+  } else {
+    return null;
+  }
+}
 
 // Progression 4.2: Array of strings
-const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+function averageWordLength(items) {
+
+  if (items.length > 0) {
+    var average = items.join('').length / items.length
+
+    return average;
+  } else {
+    return null;
+  }
+}
+
+
 
 // Progression #5: Unique arrays
+
+function uniqueArray(uniques) {
+  if (uniques.length > 0) {
+    let unique = [...new Set(uniques)];
+    return unique;
+  } else {
+    return null;
+  }
+}
+
+
+
+
+
+
+
 const wordsUnique = [
-  'bread',
-  'jam',
-  'milk',
-  'egg',
-  'flour',
-  'oil',
-  'rice',
-  'coffee powder',
-  'sugar',
-  'salt',
-  'egg',
-  'flour'
+  "bread",
+  "jam",
+  "milk",
+  "egg",
+  "flour",
+  "oil",
+  "rice",
+  "coffee powder",
+  "sugar",
+  "salt",
+  "egg",
+  "flour"
 ];
 
 // Progression #6: Find elements
-const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+const wordsFind = [
+  "machine",
+  "subset",
+  "trouble",
+  "starting",
+  "matter",
+  "eating",
+  "truth",
+  "disobedience"
+];
 
 // Progression #7: Count repetition
 const wordsCount = [
-  'machine',
-  'matter',
-  'subset',
-  'trouble',
-  'starting',
-  'matter',
-  'eating',
-  'matter',
-  'truth',
-  'disobedience',
-  'matter'
+  "machine",
+  "matter",
+  "subset",
+  "trouble",
+  "starting",
+  "matter",
+  "eating",
+  "matter",
+  "truth",
+  "disobedience",
+  "matter"
 ];
 
 // Progression #8: Bonus
